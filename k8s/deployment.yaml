@@ -1,21 +1,21 @@
-apiversion: apps:v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-demo
-spec: 
+spec:
   replicas: 2
 
   selector:
     matchLabels:
-      app: nginx
-
+      app: nginx-demo
+  
   template:
     metadata:
       labels:
         app: nginx-demo
-
+    
     spec:
-      contaienrs:
+      containers:
         - name: nginx
           image: nginx:latest
           ports:
